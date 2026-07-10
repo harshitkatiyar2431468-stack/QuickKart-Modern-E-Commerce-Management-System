@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: #f3f4f6;
+  outline: none;
+  font-weight: 600;
+}
+
+.input:focus {
+  border: 2px solid #2563eb;
+  background: white;
+}
