@@ -16,7 +16,7 @@ function Navbar() {
       fetchWishlistCount();
       fetchCartCount();
     }
-  }, []);
+  }, [token]);
 
   const fetchWishlistCount = async () => {
     try {
@@ -73,17 +73,18 @@ function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md border-b">
-      <div className="max-w-7xl mx-auto px-8 py-4 flex items-center gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-6">
 
-        {/* LOGO */}
-        <Link to="/" className="flex flex-col leading-none">
-          <span className="text-3xl font-extrabold text-blue-600">
-            QuickKart
-          </span>
-
-          <span className="text-xs font-semibold text-orange-500">
-            Explore Plus ✨
-          </span>
+        {/* QUICKKART LOGO */}
+        <Link
+          to="/"
+          className="flex items-center shrink-0"
+        >
+          <img
+            src="/quickkart-logo.png"
+            alt="QuickKart"
+            className="h-14 w-auto object-contain"
+          />
         </Link>
 
         {/* SEARCH */}
@@ -105,7 +106,7 @@ function Navbar() {
         </form>
 
         {/* MENU */}
-        <div className="flex items-center gap-7 text-gray-800 font-bold">
+        <div className="flex items-center gap-6 text-gray-800 font-bold text-sm">
 
           <Link
             to="/"
@@ -124,7 +125,7 @@ function Navbar() {
           {/* WISHLIST */}
           <Link
             to="/wishlist"
-            className="relative hover:text-red-500 transition"
+            className="relative hover:text-red-500 transition whitespace-nowrap"
           >
             ❤️ Wishlist
 
@@ -138,7 +139,7 @@ function Navbar() {
           {/* CART */}
           <Link
             to="/cart"
-            className="relative hover:text-blue-600 transition"
+            className="relative hover:text-blue-600 transition whitespace-nowrap"
           >
             🛒 Cart
 
@@ -159,14 +160,14 @@ function Navbar() {
           {token ? (
             <button
               onClick={logout}
-              className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-xl shadow-md transition"
+              className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-xl shadow-md transition"
             >
               Logout
             </button>
           ) : (
             <Link
               to="/login"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl shadow-md transition"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-xl shadow-md transition"
             >
               Login
             </Link>

@@ -279,7 +279,7 @@ function AdminOrders() {
 
                       <p className="font-black text-green-600 text-xl">
                         ₹{item.quantity * item.price}
-                      </p>
+                      </p>v 
                     </div>
                   ))}
                 </div>
