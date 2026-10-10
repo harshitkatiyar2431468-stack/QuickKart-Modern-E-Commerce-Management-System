@@ -19,12 +19,16 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     image: {
-      type: String, // image URL for now
+      type: String,
       required: true,
+    },
+    stock: {
+      type: Number,
+      default: 10,
     },
     countInStock: {
       type: Number,
-      default: 0,
+      default: 10,
     },
   },
   {

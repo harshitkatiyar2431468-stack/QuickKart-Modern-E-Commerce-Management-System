@@ -35,10 +35,21 @@ router.post("/", protect, adminOnly, async (req, res) => {
 // GET ALL PRODUCTS (Public)
 router.get("/", async (req, res) => {
   try {
-    const products = await Product.find();
+    const products = await Product.find().sort({ createdAt: -1 });
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: "Server error" });
+  }
+});
+
+// ===============================
+// SEED PRODUCTS (Public helper)
+router.get("/seed/data", async (req, res) => {
+  try {
+    const count = await Product.countDocuments();
+    res.json({ message: "Product count", count });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 });
 
